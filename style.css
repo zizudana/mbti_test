@@ -1,3 +1,11 @@
+body {
+    background-color: black;
+    font-family: 'Song Myung', serif;
+    color: white;
+}
+video {
+    height: 200px;
+}
 article {
     display: flex;
     flex-direction: column;
@@ -15,4 +23,8 @@ article {
     width: 300px;
     height: 300px;
     margin: 0 auto;
+}
+
+#animal{
+    color: goldenrod;
 }
