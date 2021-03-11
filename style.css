@@ -6,6 +6,12 @@ body {
 video {
     height: 200px;
 }
+h2{
+    font-size: 30px;
+}
+h3{
+    font-size: 20px;
+}
 article {
     display: flex;
     flex-direction: column;
@@ -19,11 +25,48 @@ article {
     display: none;
 }
 
-#img {
-    height: 300px;
+.result-title{
+    color: goldenrod;
     margin: 0 auto;
 }
 
-#animal{
+.result-title h1{
+    font-size: 30px;
+}
+
+hr {
+    border-top: 3px double #bbb;
+    text-align: center;
+}
+hr:after {
+    content: '\002665';
+    display: inline-block;
+    position: relative;
+    top: -15px;
+    padding: 0 10px;
+    background: black;
+    color: #bbb;
+    font-size: 18px;
+}
+
+.box {
+    background-color:white;
+    max-height: 250px;
+    border-radius: 20%;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+#img{
+    height: 100%;
+    margin: 0 auto;
+}
+
+#explain{
     color: goldenrod;
+    font-family: 'Nanum Gothic', sans-serif;
+}
+p{
+    color: #bbb;
+    font-size: 15px;
 }
