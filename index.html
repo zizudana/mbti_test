@@ -10,8 +10,8 @@
     <meta property="og:type" content="website"> 
     <meta property="og:title" content="라오킹 사령관 MBTI 테스트">
     <meta property="og:description" content="나와 비슷한 라오킹 사령관 찾기">
-    <meta property="og:image" content="https://rokmbti.netlify.app/img/sns_share.png">
-    <meta property="og:url" content="https://rokmbti.netlify.app/">
+    <meta property="og:image" content="https://rokmbti.netlify.app/result/img/estj.png">
+    <meta property="og:url" content="https://rokmbti.netlify.app/result/ESTJ.html">
     <!-- stylesheet -->
     <link rel="img_src" href="https://rokmbti.netlify.app/img/sns_share.png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
@@ -39,22 +39,9 @@
         <button id="A" type="button" class="btn btn-outline-warning mt-5">Primary</button>
         <button id="B" type="button" class="btn btn-outline-warning mt-5">Primary</button>
     </article>
-    <article class="result">
-        <div class="result-title mt-5">
-            <h1>나와 비슷한 라오킹 사령관은?<h1>
-        </div>
-        <hr width=40%>
-        <div class="box mt-5">
-            <img id="img" alt="animal">
-        </div>
-        <h2 id="animal" class="text-center mt-5">동물이름</h2>
-        <hr width="40%">
-        <h3 id="explain" class="text-center mt-5">설명</h3>
-        <!-- Go to www.addthis.com/dashboard to customize your tools --> <div class="share addthis_inline_share_toolbox"></div>
-
-    </article>
-
+    
     <!-- 하단 배너 광고 시작 -->
+    
     <article class="kakao_ad mt-5">
       <ins class="kakao_ad_area" style="display:none;" 
         data-ad-unit    = "DAN-EbK9fir7bZcnABAm" 
@@ -62,9 +49,10 @@
         data-ad-height  = "100"></ins> 
       <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
     </article>
-    <a class="mt-5 banner" href="https://www.codelion.net/catalog/Q291cnNlTm9kZTpqbW9r?utm_source=animal_test&utm_medium=web_lecture&utm_campaign=zizudana">
+    <!--<a class="mt-5 banner" href="https://www.codelion.net/catalog/Q291cnNlTm9kZTpqbW9r?utm_source=animal_test&utm_medium=web_lecture&utm_campaign=zizudana">
       <img class="banner-img" src="banner.png" alt="banner">
-    </a>
+    </a>-->
+
     <!-- 하단 배너 광고 끝 -->
     
     <input type="hidden" id="EI" value="0">
@@ -77,142 +65,10 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
         crossorigin="anonymous"></script>
-    <script>
-        var num = 1;
-        var q = {
-            1: { "title": "연맹채팅/단톡방에서 나는", "type": "EI", "A": "연맹원들과 수다떠는 것이 재밌다", "B": "꼭 필요한 말만 한다" },
-            2: { "title": "연맹 내에서 나는", "type": "EI", "A": "맹주 또는 임원이거나 맡고있는 역할이 있다", "B": "그냥 연맹원이다. 뭔가 나서서 하는건 역시 피곤하다" },
-            3: { "title": "내가 게임에서 재미를 느끼는 부분은", "type": "EI", "A": "사람들과의 친목, 의리, 정", "B": "전투력 올리기, 전쟁, 이벤트 등등" },
-            4: { "title": "사령관을 키울 때 나는", "type": "SN", "A": "남들이 좋다고 하는 사령관만 선택해서 키운다", "B": "다들 안좋다고 해도 내가 끌리는 사령관을 키운다" },
-            5: { "title": "이벤트가 나올 때 나는", "type": "SN", "A": "전에 해봤던 이벤트가 편해서 좋다", "B": "새로운 이벤트가 나왔으면 좋겠다" },
-            6: { "title": "전투를 할 때 나는", "type": "SN", "A": "당장 내 눈 앞의 적을 이기는 것에 집중한다", "B": "전체적으로 상황이 어떻게 돌아가는지 알고있다" },
-            7: { "title": "왕국 또는 연맹의 규칙에 대해 나는", "type": "TF", "A": "규칙은 지키라고 있는 것. 무조건 지킨다", "B": "게임인데 너무 엄격하게 하는 것도 별로다" },
-            8: { "title": "내가 더 기분이 좋을 때는", "type": "TF", "A": "정당하게 보상을 받았을 때(feat.황뚝)", "B": "연맹원들이 나를 좋아하는 것이 느껴질 때" },
-            9: { "title": "누군가 규칙을 어겨 제로잉 당하면", "type": "TF", "A": "통쾌하다", "B": "그래도 불쌍하다" },
-            10: { "title": "일일 퀘스트나 이벤트는", "type": "JP", "A": "다 해야 직성이 풀린다", "B": "딱히 신경쓰지 않는다" },
-            11: { "title": "가속을 쓸 때 나는", "type": "JP", "A": "최대한 효율적으로 쓴다", "B": "쓰고 싶을 때 쓴다" },
-            12: { "title": "오시리스를 할 때 나는", "type": "JP", "A": "전략을 짜고 계획대로 움직이는 것이 좋다", "B": "상황에 맞춰 그때그때 판단하는 것이 좋다" }
-        }
-        var result = {
-            "ISTJ": {
-                "animal": "손무<br>(ISTJ)",
-                "explain": "# 청렴 결백한 논리주의자 # 완벽주의자 <br><br> <p>한번 시작한 일은 끝까지 해내는 성격이에요.</p><p>신뢰성이 있고 현실적이며 실용적이에요.</p><p>사실에 대해 잘 몰두하고 기억하며 정확도를 중요시해요.</p><p>위기 상황에도 차분하며 안정되어보여요.</p><p>어떤 사람인지 알기 위해서는 상당한 시간이 걸려요</p>",
-                "img": "img/sun.png"
-            },
-            "ISFJ": {
-                "animal": "관우<br>(ISFJ)",
-                "explain": "# 용감한 수호자 # 전통주의자 <br><br> <p>성실하고 온화하며 협조를 잘 해요.</p><p>책임감이 강하고 일을 끝까지 해 내는 인내력이 높아요.</p><p>이 유형의 사람이 가진 침착성과 인내력은 가정이나 집단의 안정을 가져다줘요.</p><p>자신과 타인의 감정의 흐름에 민감해요.</p><p>어떤 난관이 있어도 일을 꾸준히 밀고 나가요.</p>",
-                "img": "img/guan.png"
-            },
-            "INFJ": {
-                "animal": "샤를마뉴<br>(INFJ)",
-                "explain": "# 선의의 옹호자 # 예언자 <br><br> <p>창의력과 통찰력이 뛰어나요.</p><p>강한 직관과 뛰어난 영감으로 말 없이도 타인에게 영향을 끼쳐요.</p><p>독창성과 사적인 독립심이 강하며 확고한 신념과 뚜렷한 원리원칙을 가지고 있어요.</p><p>공동의 이익과 동료를 중요시 여겨 사람들에게 존경을 받아요.</p><p>남에게 강요하기 보다는 행동과 권유로 사람들의 마음을 움직여 따르게 만드는 정신적 지도자인 경우가 많아요.</p>",
-                "img": "img/char.png"
-            },
-            "INTJ": {
-                "animal": "이순신<br>(INTJ)",
-                "explain": "# 용의주도한 전략가 # 과학자 <br><br> <p>전체를 조합해 비전을 제시해요.</p><p>행동과 사고에 있어 독창적이고 내적인 신념이 강해요.</p><p>독립적이고 단호하며 때때로 고집이 있어요.</p><p>자신이 가진 영감과 목적을 실현시키려는 의지와 결단력을 가지고 있어요.</p><p>자신과 타인의 능력을 중요시 하며 목적 달성을 위해 최선을 다해 노력해요.</p>",
-                "img": "img/isun.png"
-            },
-            "ISTP": {
-                "animal": "을지문덕<br>(ISTP)",
-                "explain": "# 만능 재주꾼 # 백과사전 <br><br> <p>논리적이고 분석적이며 객관적으로 관찰해요.</p><p>사실적인 정보를 조직하기 좋아해요.</p><p>자신을 개방하지 않는 편이라서 가까운 친구들 외에는 대체로 사람들과 사귀지 않아요.</p><p>일상 생활에 있어 매우 적응력이 강해요.</p>",
-                "img": "img/eul.png"
-            },
-            "ISFP": {
-                "animal": "살라딘<br>(ISFP)",
-                "explain": "# 호기심 많은 예술가 # 성인군자 <br><br> <p>속마음이 따뜻하고 겸손하며 동정심을 갖고 있어요.</p><p>말 보다 행동으로 마음을 보여주지만 상대방을 잘 알게 되기 전까지는 마음을 드러내지 않는 경향이 있어요.</p>",
-                "img": "img/sal.png"
-            },
-            "INFP": {
-                "animal": "잔다르크<br>(INFP)",
-                "explain": "# 열정적인 중재자 # 이상주의자 <br><br> <p>이상적인 세상을 만들어가는 사람이에요.</p><p>자신이 지향하는 이상에 대해 정열적인 신념을 지니고 있어요.</p><p>상대방을 잘 알기 전에는 표현을 많이 하지 않지만 마음이 따뜻해요.</p><p>자신의 사람이나 일에 강하고 성실해요.</p>",
-                "img": "img/joan.png"
-            },
-            "INTP": {
-                "animal": "네부카드네자르 2세<br>(INTP)",
-                "explain": "# 논리적인 사색가 # 아이디어 뱅크 <br><br> <p>대체로 조용하고 과묵하나 관심이 있는 분야에 대해서는 말을 잘 해요.</p><p>매우 분석적이고 논리적이며 객관적 비평을 잘 해요.</p><p>이해가 빠르고 지적으로 관심이 많아요.</p><p>때로 어떤 아이디어에 몰입해 주위에서 돌아가고 있는 일을 모를 때가 있어요.</p>",
-                "img": "img/nebu.png"
-            },
-            "ESTP": {
-                "animal": "알렉산더 대왕<br>(ESTP)",
-                "explain": "# 모험을 즐기는 사업가 # 활동가 <br><br> <p>친구, 운동, 음식 등 다양함을 선호해요. </p><p>관대하고 느긋하며 선입견을 갖지 않고 개방적이에요.</p><p>갈등이나 긴장이 일어나는 상황을 잘 무마하는 능력이 있어요.</p><p>타협과 적응을 잘 하며 누구나 만족할 수 있는 해결책을 모색해요.</p>",
-                "img": "img/alex.png"
-            },
-            "ESFP": {
-                "animal": "클레오파트라<br>(ESFP)",
-                "explain": "# 자유로운 영혼의 연예인 # 사교형 <br><br> <p>분위기를 고조시키는 우호적인 성격이에요.</p><p>친절하고 적응을 잘 하며 관용적이에요.</p><p>호기심이 많아서 다른 사람의 일이나 활동에 관심이 많아요.</p><p>이론이나 책을 통해 배우기 보단 실생활에서 경험을 통해 배우는 것을 선호해요.</p>",
-                "img": "img/cleo.png"
-            },
-            "ENFP": {
-                "animal": "스키피오<br>(ENFP)",
-                "explain": "# 재기 발랄한 활동가 # 스파크형 <br><br> <p>열정적이고 창의적이며 통찰력이 뛰어나요.</p><p>풍부한 상상력과 에너지를 가지고 솔선수범하며 일을 재빠르게 해결해요.</p><p>자신의 열정으로 다른 사람들도 관심을 갖게 만들며 다른 사람들을 잘 도와줘요.</p>",
-                "img": "img/sci.png"
-            },
-            "ENTP": {
-                "animal": "람세스 2세<br>(ENTP)",
-                "explain": "# 논쟁을 즐기는 변론가 # 발명가 <br><br> <p>독창적인 혁신가이며 항상 새로운 가능성을 찾고 새로운 도전을 즐겨요.</p><p>상상력이 풍부하고 여러 가지 일에 재능이 있으며 자신감이 넘쳐요.</p><p>다른 사람을 판단하기보다 이해하려고 노력해요.</p>",
-                "img": "img/ram.png"
-            },
-            "ESTJ": {
-                "animal": "칭기즈칸<br>(ESTJ)",
-                "explain": "# 엄격한 관리자 # 사업가 <br><br> <p>일을 계획하고 실행하는 능력이 뛰어나요.</p><p>현실적이고 사실적이며 체계적, 논리적으로 단체를 이끄는 재능을 가졌어요.</p><p>불분명한 상태 또는 실용성이 없는 분야에는 큰 흥미가 없어요.</p><p>분명한 규칙을 중요시하고 그에 따라 행동하고 일을 추진하여 완성해 나가요.</p><p>어떤 결정을 내릴 때는 확고한 사실에 바탕을 두어야 해요.</p><p>대체로 현재 결과를 볼 수 있는 일을 즐기는 편이에요.</p>",
-                "img": "img/khan.png"
-            },
-            "ESFJ": {
-                "animal": "리처드 1세<br>(ESFJ)",
-                "explain": "# 사교적인 외교관 # 친선도모형 <br><br> <p>유난히 동정심과 동료애가 많아서 사람들을 잘 도와요.</p><p>친절하고 재치가 있으며 다른 사람들에게 관심이 많아요.</p><p>양심적이고 정리정돈을 잘 해요.</p><p>주변의 지지를 받으면 일에 더 열중하지만 무관심한 태도에는 민감해요.</p>",
-                "img": "img/rich.png"
-            },
-            "ENFJ": {
-                "animal": "이성계<br>(ENFJ)",
-                "explain": "# 정의로운 사회운동가 # 언변능숙형 <br><br> <p>타인의 성장을 도모하고 협동해요.</p><p>민첩하고 참을성이 많으며 성실해요.</p><p>새로운 아이디어에 대한 호기심이 많으며 쓰기 보다는 말로써 생각을 잘 표현해요.</p><p>계획을 제시하거나 조직을 이끌어 가는 능력이 있어요.</p>",
-                "img": "img/seong.png"
-            },
-            "ENTJ": { 
-                "animal": "조조<br>(ENTJ)", 
-                "explain": "# 대담한 통솔자 # 개혁가 <br><br> <p>활동적이며 논리적이고 분석적이에요.</p><p>사전 준비를 철저히 하여 조직적이고 쳬계적으로 목적 달성을 추진시키는 지도자가 많아요.</p><p>비능률적이거나 불확실한 상황에 대해서는 인내심이 부족하지만 대처를 잘 해요.</p><p>솔직하고 통솔력이 있으며 사람 보다는 관념에 더 집중하는 경향이 있어요.</p>", 
-                "img": "img/cao.png" 
-            }
-        }
-
-        function start() {
-            $(".start").hide();
-            $(".question").show();
-            next();
-        }
-        $("#A").click(function () {
-            var type = $("#type").val();
-            var preValue = $("#" + type).val();
-            $("#" + type).val(parseInt(preValue) + 1);
-            next();
-        });
-        $("#B").click(function () {
-            next();
-        });
-        function next() {
-            if (num == 13) {
-                $(".question").hide();
-                $(".result").show();
-                var mbti = "";
-                ($("#EI").val() < 2) ? mbti += "I" : mbti += "E";
-                ($("#SN").val() < 2) ? mbti += "N" : mbti += "S";
-                ($("#TF").val() < 2) ? mbti += "F" : mbti += "T";
-                ($("#JP").val() < 2) ? mbti += "P" : mbti += "J";
-                $("#img").attr("src", result[mbti]["img"]);
-                $("#animal").html(result[mbti]["animal"]);
-                $("#explain").html(result[mbti]["explain"]);
-            } else {
-                $(".progress-bar").attr('style', 'width: calc(100/12*' + num + '%)');
-                $("#title").html(q[num]["title"]);
-                $("#type").val(q[num]["type"]);
-                $("#A").html(q[num]["A"]);
-                $("#B").html(q[num]["B"]);
-                num++;
-            }
-        }
-    </script>
-    <!-- Go to www.addthis.com/dashboard to customize your tools --> <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-604adfa7cd9c0bea"></script>
+    
+    <!-- Go to www.addthis.com/dashboard to customize your tools -->
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-604adfa7cd9c0bea"></script>
+    <script src="index.js"></script>
 </body>
 
 </html>
