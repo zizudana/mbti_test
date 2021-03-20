@@ -21,6 +21,34 @@ article {
 .question {
     display: none;
 }
+button:active,
+button:hover,
+button:focus {
+  background: var(--button-hover-bg-color);
+  outline: 0;
+}
+button:disabled {
+  opacity: 0.5;
+}
+.ans-btn{
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: black;
+  border: 2px solid goldenrod;
+  border-radius: 25px;
+  color:goldenrod;
+  padding: 10px 0;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  margin: 4px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transition: 0.5s;
+}
+
 
 .result-title{
     color: goldenrod;
@@ -73,7 +101,9 @@ p{
 .share {
   margin: 0 auto;
 }
-
+.btn-info{
+  color: black;
+}
 .kakao_ad{
   width: 320px;
   margin: 0 auto;
